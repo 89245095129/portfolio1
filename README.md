@@ -1,4 +1,4 @@
-# portfolio-laravel-vue1
+# portfolio1
 # 🚀 Портфолио Светланы Тюменцевой
 
 ![Portfolio Preview](preview.png)
