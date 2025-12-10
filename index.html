@@ -154,6 +154,12 @@
             max-height: 80vh;
             object-fit: contain;
         }
+        
+        /* Стили для PDF иконок */
+        .pdf-icon {
+            color: #d32f2f;
+            margin-right: 5px;
+        }
     </style>
 </head>
 <body>
@@ -195,8 +201,8 @@
                 </div>
                 <div class="col-lg-6 text-center">
                     <div class="profile-img-container">
-                        <!-- Замените src на путь к вашему фото -->
-                        <img src="https://via.placeholder.com/200" alt="Светлана Тюменцева" class="profile-img" id="profilePhoto">
+                        <!-- Ваше фото -->
+                        <img src="my-foto.png" alt="Светлана Тюменцева" class="profile-img" id="profilePhoto">
                     </div>
                     <div class="mt-3">
                         <small class="text-white-50">Наведите курсор для увеличения фото</small>
@@ -260,57 +266,53 @@
             <h2 class="section-title text-center">Сертификаты</h2>
             <p class="text-center mb-5">Подтверждённые квалификации и достижения</p>
             
-            <div class="row">
-                <!-- Сертификат 1 -->
-                <div class="col-md-6 col-lg-4 mb-4">
+            <div class="row justify-content-center">
+                <!-- Сертификат FullStack -->
+                <div class="col-md-6 col-lg-5 mb-4">
                     <div class="card certificate-card h-100">
-                        <img src="https://via.placeholder.com/400x250/667eea/ffffff?text=Сертификат+FullStack" class="card-img-top certificate-img" alt="Сертификат FullStack">
-                        <div class="card-body">
+                        <div class="card-body text-center">
+                            <i class="fas fa-certificate fa-4x text-primary mb-3"></i>
                             <h5 class="card-title">Сертификат FullStack разработчика</h5>
                             <p class="card-text">Подтверждение квалификации FullStack разработчика с углублённой специализацией на FrontEnd.</p>
-                            <div class="d-flex justify-content-between align-items-center">
+                            <p><strong>Система Акционов</strong></p>
+                            <div class="mt-3">
+                                <a href="certificatesfullstack-certifikate.pdf" target="_blank" class="btn btn-primary">
+                                    <i class="fas fa-file-pdf pdf-icon"></i> Открыть PDF
+                                </a>
+                            </div>
+                            <div class="mt-2">
                                 <small class="text-muted">Выдан: 2024</small>
-                                <button class="btn btn-sm btn-outline-primary" onclick="viewCertificate('cert1')">
-                                    <i class="fas fa-expand me-1"></i> Просмотр
-                                </button>
                             </div>
                         </div>
                     </div>
                 </div>
                 
-                <!-- Сертификат 2 -->
-                <div class="col-md-6 col-lg-4 mb-4">
+                <!-- Сертификат Python -->
+                <div class="col-md-6 col-lg-5 mb-4">
                     <div class="card certificate-card h-100">
-                        <img src="https://via.placeholder.com/400x250/764ba2/ffffff?text=FrontEnd+Мастер" class="card-img-top certificate-img" alt="FrontEnd специалист">
-                        <div class="card-body">
-                            <h5 class="card-title">FrontEnd специалист</h5>
-                            <p class="card-text">Сертификация по современным FrontEnd технологиям: React, JavaScript, HTML/CSS.</p>
-                            <div class="d-flex justify-content-between align-items-center">
-                                <small class="text-muted">Выдан: 2023</small>
-                                <button class="btn btn-sm btn-outline-primary" onclick="viewCertificate('cert2')">
-                                    <i class="fas fa-expand me-1"></i> Просмотр
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Сертификат 3 -->
-                <div class="col-md-6 col-lg-4 mb-4">
-                    <div class="card certificate-card h-100">
-                        <img src="https://via.placeholder.com/400x250/ffd700/000000?text=Python+Flask" class="card-img-top certificate-img" alt="Python Flask">
-                        <div class="card-body">
-                            <h5 class="card-title">Python & Flask разработчик</h5>
+                        <div class="card-body text-center">
+                            <i class="fab fa-python fa-4x text-success mb-3"></i>
+                            <h5 class="card-title">Сертификат Python разработчика</h5>
                             <p class="card-text">Сертификат по разработке backend на Python с использованием Flask framework.</p>
-                            <div class="d-flex justify-content-between align-items-center">
-                                <small class="text-muted">Выдан: 2023</small>
-                                <button class="btn btn-sm btn-outline-primary" onclick="viewCertificate('cert3')">
-                                    <i class="fas fa-expand me-1"></i> Просмотр
-                                </button>
+                            <p><strong>Подтверждение навыков Python/Flask</strong></p>
+                            <div class="mt-3">
+                                <a href="certificatespython-certifikate.pdf" target="_blank" class="btn btn-success">
+                                    <i class="fas fa-file-pdf pdf-icon"></i> Открыть PDF
+                                </a>
+                            </div>
+                            <div class="mt-2">
+                                <small class="text-muted">Выдан: 2024</small>
                             </div>
                         </div>
                     </div>
                 </div>
+            </div>
+            
+            <div class="text-center mt-4">
+                <p class="text-muted">
+                    <i class="fas fa-info-circle me-1"></i>
+                    Нажмите на кнопку "Открыть PDF" для просмотра сертификатов
+                </p>
             </div>
         </div>
     </section>
@@ -548,6 +550,17 @@
             <div class="row">
                 <!-- Галерея 1 -->
                 <div class="col-md-4 mb-4">
+                    <div class="gallery-item" onclick="openModal('preview.png')">
+                        <img src="preview.png" alt="Превью проекта">
+                        <div class="gallery-overlay">
+                            <h6 class="mb-0">Превью портфолио</h6>
+                            <small>Главная страница сайта</small>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Галерея 2 -->
+                <div class="col-md-4 mb-4">
                     <div class="gallery-item" onclick="openModal('https://via.placeholder.com/800x600/667eea/ffffff?text=Проект+ILine')">
                         <img src="https://via.placeholder.com/400x300/667eea/ffffff?text=ILine+Каталог" alt="Проект ILine">
                         <div class="gallery-overlay">
@@ -557,57 +570,13 @@
                     </div>
                 </div>
                 
-                <!-- Галерея 2 -->
+                <!-- Галерея 3 -->
                 <div class="col-md-4 mb-4">
                     <div class="gallery-item" onclick="openModal('https://via.placeholder.com/800x600/764ba2/ffffff?text=API+Конструктор')">
                         <img src="https://via.placeholder.com/400x300/764ba2/ffffff?text=Botari+API" alt="API конструктор">
                         <div class="gallery-overlay">
                             <h6 class="mb-0">API конструктор ботов</h6>
                             <small>Интерфейс администратора</small>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Галерея 3 -->
-                <div class="col-md-4 mb-4">
-                    <div class="gallery-item" onclick="openModal('https://via.placeholder.com/800x600/ffd700/000000?text=Портфолио+сайт')">
-                        <img src="https://via.placeholder.com/400x300/ffd700/000000?text=Портфолио" alt="Портфолио сайт">
-                        <div class="gallery-overlay">
-                            <h6 class="mb-0">Персональное портфолио</h6>
-                            <small>Адаптивный дизайн</small>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Галерея 4 -->
-                <div class="col-md-4 mb-4">
-                    <div class="gallery-item" onclick="openModal('https://via.placeholder.com/800x600/28a745/ffffff?text=E-soft+API')">
-                        <img src="https://via.placeholder.com/400x300/28a745/ffffff?text=E-soft+API" alt="API E-soft">
-                        <div class="gallery-overlay">
-                            <h6 class="mb-0">API для анализа данных</h6>
-                            <small>Сервис E-soft</small>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Галерея 5 -->
-                <div class="col-md-4 mb-4">
-                    <div class="gallery-item" onclick="openModal('https://via.placeholder.com/800x600/17a2b8/ffffff?text=Таймер+JavaScript')">
-                        <img src="https://via.placeholder.com/400x300/17a2b8/ffffff?text=Таймер+JS" alt="Таймер JS">
-                        <div class="gallery-overlay">
-                            <h6 class="mb-0">Таймер обратного отсчета</h6>
-                            <small>JavaScript приложение</small>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Галерея 6 -->
-                <div class="col-md-4 mb-4">
-                    <div class="gallery-item" onclick="openModal('https://via.placeholder.com/800x600/dc3545/ffffff?text=HR+Система')">
-                        <img src="https://via.placeholder.com/400x300/dc3545/ffffff?text=HR+Система" alt="HR система">
-                        <div class="gallery-overlay">
-                            <h6 class="mb-0">Система управления персоналом</h6>
-                            <small>ILine HR система</small>
                         </div>
                     </div>
                 </div>
@@ -757,19 +726,6 @@
             });
         });
 
-        // Функция для просмотра сертификатов
-        function viewCertificate(certId) {
-            const certImages = {
-                'cert1': 'https://via.placeholder.com/800x600/667eea/ffffff?text=Сертификат+FullStack+Разработчик',
-                'cert2': 'https://via.placeholder.com/800x600/764ba2/ffffff?text=FrontEnd+Специалист',
-                'cert3': 'https://via.placeholder.com/800x600/ffd700/000000?text=Python+Flask+Разработчик'
-            };
-            
-            if (certImages[certId]) {
-                openModal(certImages[certId]);
-            }
-        }
-
         // Функция для открытия модального окна с изображением
         function openModal(imageSrc) {
             const modal = new bootstrap.Modal(document.getElementById('imageModal'));
@@ -815,7 +771,31 @@
                 const currentYear = new Date().getFullYear();
                 yearSpan.textContent = yearSpan.textContent.replace('2024', currentYear);
             }
+            
+            // Проверка существования файлов
+            checkFiles();
         });
+
+        // Проверка наличия файлов
+        function checkFiles() {
+            const files = [
+                'my-foto.png',
+                'preview.png',
+                'certificatesfullstack-certifikate.pdf',
+                'certificatespython-certifikate.pdf'
+            ];
+            
+            files.forEach(file => {
+                const img = new Image();
+                img.onload = function() {
+                    console.log(`✓ Файл ${file} загружен`);
+                };
+                img.onerror = function() {
+                    console.warn(`⚠ Файл ${file} не найден`);
+                };
+                img.src = file;
+            });
+        }
     </script>
 </body>
 </html>
